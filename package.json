@@ -32,6 +32,6 @@
   },
   "lint-staged": {
     "*.{ts,md}": "prettier --write",
-    "*.{ts}": "eslint"
+    "*": "eslint"
   }
 }
