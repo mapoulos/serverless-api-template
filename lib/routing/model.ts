@@ -7,7 +7,7 @@ export interface Route {
 export interface RouteHandlerInput {
   pathParameters: Record<string, string>;
   queryStringParameters: Record<string, string>;
-  body: Object | string;
+  body: Record<string, unknown> | string;
   headers?: Record<string, string>;
 }
 
@@ -17,7 +17,7 @@ export type RouteHandler = (
 
 export interface RouteHandlerResponse {
   statusCode: number;
-  body: Object | string;
+  body: Record<string, unknown> | string;
   headers?: Record<string, string>;
 }
 
