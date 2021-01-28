@@ -72,7 +72,7 @@ export class Router {
         }
 
         const pathParameterKeys = (
-          pathPattern.match(/:\w+/g) || []
+          pathPattern.match(/\:\w+/g) || []
         ).map((match) => match.substring(1));
         const pathParameterValues = regexMatch.slice(1);
         const pathParameters: Record<string, string> = pathParameterKeys.reduce(
