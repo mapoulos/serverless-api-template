@@ -20,16 +20,6 @@ Resources:
         ZipFile: |
           exports.defaultHandler = async (event,context) => { console.log(event) ; return {statusCode: 200, body: "default fired"} }
       Description: "The proxy lambda that fields requests from client"
-      Environment:
-        Variables:
-          S3Bucket: !Ref CCGISBucket
-          DynamoTable: !Ref CCTable
-          ### These are all needed to run an ECS processing task
-          ECSCluster: !Ref CCCluster
-          TaskDefinition: !Ref CCGenericGISProcessor
-          Subnet1ID: !Ref CCPublicSubnet
-          Subnet2ID: !Ref CCPublicSubnet2
-          SecurityGroupID: !Ref CCSecurityGroup
       Handler: index.defaultHandler
       MemorySize: 1024
       Role: !GetAtt ExampleLambdaRole.Arn
